@@ -1,0 +1,31 @@
+version: 2
+
+sources:
+  - name: citibike_nyc_2024
+    description: "Raw 2024 Citibike NYC data from BigQuery"
+    database: lunar-works-464115-g0
+    schema: citibike_2024
+    tables:
+      - name: 202401-citibike-tripdata
+      - name: 202402-citibike-tripdata
+      - name: 202403-citibike-tripdata
+      - name: 202404-citibike-tripdata
+      - name: 202405-citibike-tripdata
+      - name: 202406-citibike-tripdata
+      - name: 202407-citibike-tripdata
+      - name: 202408-citibike-tripdata
+      - name: 202409-citibike-tripdata
+      - name: 202410-citibike-tripdata
+      - name: 202411-citibike-tripdata
+      - name: 202412-citibike-tripdata
+  - name: citibike_nyc_2025
+    description: "Raw 2025 Citibike NYC data from BigQuery"
+    database: lunar-works-464115-g0
+    schema: citibike_2025
+    tables:
+      - name: 202501-citibike-tripdata
+      - name: 202502-citibike-tripdata
+      - name: 202503-citibike-tripdata
+      - name: 202504-citibike-tripdata
+      - name: 202505-citibike-tripdata
+      
