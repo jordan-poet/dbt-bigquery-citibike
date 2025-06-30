@@ -1,0 +1,62 @@
+version: 2
+
+models:
+  - name: stg_citibike_202401
+    description: "Staging model for Citibike data from January 2024"
+    tests:
+      - dbt_utils.expression_is_true:
+          expression: "ended_at IS NULL OR ended_at >= started_at"
+      - dbt_utils.expression_is_true:
+          expression: "end_station_name IS NULL OR end_station_id IS NOT NULL"
+          config:
+            error_if: ">0"
+            warn_if: ">0"
+    columns:
+      - name: ride_id
+        description: "Unique ride identifier"
+        tests:
+          - unique
+          - not_null
+      - name: rideable_type
+        description: "Classifier for e-bike or classic"
+      - name: started_at
+        description: "Trip start timestamp"
+        tests:
+          - not_null
+      - name: ended_at
+        description: "Trip end timestamp"
+      - name: start_station_name
+        description: "Trip start station name"
+        tests:
+          - not_null
+      - name: start_station_id
+        description: "Trip start station ID"
+        tests:
+          - not_null
+      - name: started_at
+        description: "Trip start timestamp"
+        tests:
+          - not_null
+      - name: end_station_name
+        description: "Trip end station name"
+      - name: end_station_id
+        description: "Trip end station id"
+        tests:
+          - not_null
+      - name: start_lat
+        description: "Trip start latitude"
+        tests:
+          - not_null
+      - name: start_lng
+        description: "Trip start longitude"
+        tests:
+          - not_null
+      - name: end_lat
+        description: "Trip end latitude"
+      - name: end_lat
+        description: "Trip end longitude"
+      - name: member_casual
+        description: "User membership classification"
+        tests:
+          - not_null
+      # Add your other columns here
