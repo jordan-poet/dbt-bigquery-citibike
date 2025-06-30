@@ -1,0 +1,1307 @@
+version: 2
+
+models:
+  - name: stg_citibike_202401
+    description: "Staging model for Citibike data from January 2024"
+    tests:
+      - dbt_utils.expression_is_true:
+          expression: "ended_at IS NULL OR ended_at >= started_at"
+          config:
+            severity: warn  # Changed from error to warn
+      - dbt_utils.expression_is_true:
+          expression: "end_station_name IS NULL OR end_station_id IS NOT NULL"
+          config:
+            severity: warn  # Changed from error to warn
+    columns:
+      - name: ride_id
+        description: "Unique ride identifier"
+        tests:
+          - unique:
+              config:
+                severity: warn
+          - not_null:
+              config:
+                severity: warn
+      - name: rideable_type
+        description: "Classifier for e-bike or classic"
+      - name: started_at
+        description: "Trip start timestamp"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: ended_at
+        description: "Trip end timestamp"
+      - name: start_station_name
+        description: "Trip start station name"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_station_id
+        description: "Trip start station ID"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: end_station_name
+        description: "Trip end station name"
+      - name: end_station_id
+        description: "Trip end station id"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_lat
+        description: "Trip start latitude"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_lng
+        description: "Trip start longitude"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: end_lat
+        description: "Trip end latitude"
+      - name: end_lng
+        description: "Trip end longitude"
+      - name: member_casual
+        description: "User membership classification"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+  - name: stg_citibike_202402
+    description: "Staging model for Citibike data from February 2024"
+    tests:
+      - dbt_utils.expression_is_true:
+          expression: "ended_at IS NULL OR ended_at >= started_at"
+          config:
+            severity: warn  # Changed from error to warn
+      - dbt_utils.expression_is_true:
+          expression: "end_station_name IS NULL OR end_station_id IS NOT NULL"
+          config:
+            severity: warn  # Changed from error to warn
+    columns:
+      - name: ride_id
+        description: "Unique ride identifier"
+        tests:
+          - unique:
+              config:
+                severity: warn
+          - not_null:
+              config:
+                severity: warn
+      - name: rideable_type
+        description: "Classifier for e-bike or classic"
+      - name: started_at
+        description: "Trip start timestamp"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: ended_at
+        description: "Trip end timestamp"
+      - name: start_station_name
+        description: "Trip start station name"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_station_id
+        description: "Trip start station ID"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: end_station_name
+        description: "Trip end station name"
+      - name: end_station_id
+        description: "Trip end station id"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_lat
+        description: "Trip start latitude"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_lng
+        description: "Trip start longitude"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: end_lat
+        description: "Trip end latitude"
+      - name: end_lng
+        description: "Trip end longitude"
+      - name: member_casual
+        description: "User membership classification"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+  - name: stg_citibike_202403
+    description: "Staging model for Citibike data from March 2024"
+    tests:
+      - dbt_utils.expression_is_true:
+          expression: "ended_at IS NULL OR ended_at >= started_at"
+          config:
+            severity: warn  # Changed from error to warn
+      - dbt_utils.expression_is_true:
+          expression: "end_station_name IS NULL OR end_station_id IS NOT NULL"
+          config:
+            severity: warn  # Changed from error to warn
+    columns:
+      - name: ride_id
+        description: "Unique ride identifier"
+        tests:
+          - unique:
+              config:
+                severity: warn
+          - not_null:
+              config:
+                severity: warn
+      - name: rideable_type
+        description: "Classifier for e-bike or classic"
+      - name: started_at
+        description: "Trip start timestamp"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: ended_at
+        description: "Trip end timestamp"
+      - name: start_station_name
+        description: "Trip start station name"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_station_id
+        description: "Trip start station ID"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: end_station_name
+        description: "Trip end station name"
+      - name: end_station_id
+        description: "Trip end station id"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_lat
+        description: "Trip start latitude"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_lng
+        description: "Trip start longitude"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: end_lat
+        description: "Trip end latitude"
+      - name: end_lng
+        description: "Trip end longitude"
+      - name: member_casual
+        description: "User membership classification"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+  - name: stg_citibike_202404
+    description: "Staging model for Citibike data from April 2024"
+    tests:
+      - dbt_utils.expression_is_true:
+          expression: "ended_at IS NULL OR ended_at >= started_at"
+          config:
+            severity: warn  # Changed from error to warn
+      - dbt_utils.expression_is_true:
+          expression: "end_station_name IS NULL OR end_station_id IS NOT NULL"
+          config:
+            severity: warn  # Changed from error to warn
+    columns:
+      - name: ride_id
+        description: "Unique ride identifier"
+        tests:
+          - unique:
+              config:
+                severity: warn
+          - not_null:
+              config:
+                severity: warn
+      - name: rideable_type
+        description: "Classifier for e-bike or classic"
+      - name: started_at
+        description: "Trip start timestamp"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: ended_at
+        description: "Trip end timestamp"
+      - name: start_station_name
+        description: "Trip start station name"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_station_id
+        description: "Trip start station ID"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: end_station_name
+        description: "Trip end station name"
+      - name: end_station_id
+        description: "Trip end station id"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_lat
+        description: "Trip start latitude"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_lng
+        description: "Trip start longitude"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: end_lat
+        description: "Trip end latitude"
+      - name: end_lng
+        description: "Trip end longitude"
+      - name: member_casual
+        description: "User membership classification"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+  - name: stg_citibike_202405
+    description: "Staging model for Citibike data from May 2024"
+    tests:
+      - dbt_utils.expression_is_true:
+          expression: "ended_at IS NULL OR ended_at >= started_at"
+          config:
+            severity: warn  # Changed from error to warn
+      - dbt_utils.expression_is_true:
+          expression: "end_station_name IS NULL OR end_station_id IS NOT NULL"
+          config:
+            severity: warn  # Changed from error to warn
+    columns:
+      - name: ride_id
+        description: "Unique ride identifier"
+        tests:
+          - unique:
+              config:
+                severity: warn
+          - not_null:
+              config:
+                severity: warn
+      - name: rideable_type
+        description: "Classifier for e-bike or classic"
+      - name: started_at
+        description: "Trip start timestamp"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: ended_at
+        description: "Trip end timestamp"
+      - name: start_station_name
+        description: "Trip start station name"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_station_id
+        description: "Trip start station ID"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: end_station_name
+        description: "Trip end station name"
+      - name: end_station_id
+        description: "Trip end station id"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_lat
+        description: "Trip start latitude"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_lng
+        description: "Trip start longitude"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: end_lat
+        description: "Trip end latitude"
+      - name: end_lng
+        description: "Trip end longitude"
+      - name: member_casual
+        description: "User membership classification"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+  - name: stg_citibike_202406
+    description: "Staging model for Citibike data from June 2024"
+    tests:
+      - dbt_utils.expression_is_true:
+          expression: "ended_at IS NULL OR ended_at >= started_at"
+          config:
+            severity: warn  # Changed from error to warn
+      - dbt_utils.expression_is_true:
+          expression: "end_station_name IS NULL OR end_station_id IS NOT NULL"
+          config:
+            severity: warn  # Changed from error to warn
+    columns:
+      - name: ride_id
+        description: "Unique ride identifier"
+        tests:
+          - unique:
+              config:
+                severity: warn
+          - not_null:
+              config:
+                severity: warn
+      - name: rideable_type
+        description: "Classifier for e-bike or classic"
+      - name: started_at
+        description: "Trip start timestamp"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: ended_at
+        description: "Trip end timestamp"
+      - name: start_station_name
+        description: "Trip start station name"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_station_id
+        description: "Trip start station ID"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: end_station_name
+        description: "Trip end station name"
+      - name: end_station_id
+        description: "Trip end station id"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_lat
+        description: "Trip start latitude"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_lng
+        description: "Trip start longitude"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: end_lat
+        description: "Trip end latitude"
+      - name: end_lng
+        description: "Trip end longitude"
+      - name: member_casual
+        description: "User membership classification"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+
+  - name: stg_citibike_202407
+    description: "Staging model for Citibike data from July 2024"
+    tests:
+      - dbt_utils.expression_is_true:
+          expression: "ended_at IS NULL OR ended_at >= started_at"
+          config:
+            severity: warn  # Changed from error to warn
+      - dbt_utils.expression_is_true:
+          expression: "end_station_name IS NULL OR end_station_id IS NOT NULL"
+          config:
+            severity: warn  # Changed from error to warn
+    columns:
+      - name: ride_id
+        description: "Unique ride identifier"
+        tests:
+          - unique:
+              config:
+                severity: warn
+          - not_null:
+              config:
+                severity: warn
+      - name: rideable_type
+        description: "Classifier for e-bike or classic"
+      - name: started_at
+        description: "Trip start timestamp"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: ended_at
+        description: "Trip end timestamp"
+      - name: start_station_name
+        description: "Trip start station name"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_station_id
+        description: "Trip start station ID"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: end_station_name
+        description: "Trip end station name"
+      - name: end_station_id
+        description: "Trip end station id"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_lat
+        description: "Trip start latitude"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_lng
+        description: "Trip start longitude"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: end_lat
+        description: "Trip end latitude"
+      - name: end_lng
+        description: "Trip end longitude"
+      - name: member_casual
+        description: "User membership classification"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+  - name: stg_citibike_202408
+    description: "Staging model for Citibike data from August 2024"
+    tests:
+      - dbt_utils.expression_is_true:
+          expression: "ended_at IS NULL OR ended_at >= started_at"
+          config:
+            severity: warn  # Changed from error to warn
+      - dbt_utils.expression_is_true:
+          expression: "end_station_name IS NULL OR end_station_id IS NOT NULL"
+          config:
+            severity: warn  # Changed from error to warn
+    columns:
+      - name: ride_id
+        description: "Unique ride identifier"
+        tests:
+          - unique:
+              config:
+                severity: warn
+          - not_null:
+              config:
+                severity: warn
+      - name: rideable_type
+        description: "Classifier for e-bike or classic"
+      - name: started_at
+        description: "Trip start timestamp"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: ended_at
+        description: "Trip end timestamp"
+      - name: start_station_name
+        description: "Trip start station name"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_station_id
+        description: "Trip start station ID"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: end_station_name
+        description: "Trip end station name"
+      - name: end_station_id
+        description: "Trip end station id"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_lat
+        description: "Trip start latitude"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_lng
+        description: "Trip start longitude"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: end_lat
+        description: "Trip end latitude"
+      - name: end_lng
+        description: "Trip end longitude"
+      - name: member_casual
+        description: "User membership classification"
+        tests:
+          - not_null:
+              config:
+                severity: warn     
+  - name: stg_citibike_202409
+    description: "Staging model for Citibike data from September 2024"
+    tests:
+      - dbt_utils.expression_is_true:
+          expression: "ended_at IS NULL OR ended_at >= started_at"
+          config:
+            severity: warn  # Changed from error to warn
+      - dbt_utils.expression_is_true:
+          expression: "end_station_name IS NULL OR end_station_id IS NOT NULL"
+          config:
+            severity: warn  # Changed from error to warn
+    columns:
+      - name: ride_id
+        description: "Unique ride identifier"
+        tests:
+          - unique:
+              config:
+                severity: warn
+          - not_null:
+              config:
+                severity: warn
+      - name: rideable_type
+        description: "Classifier for e-bike or classic"
+      - name: started_at
+        description: "Trip start timestamp"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: ended_at
+        description: "Trip end timestamp"
+      - name: start_station_name
+        description: "Trip start station name"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_station_id
+        description: "Trip start station ID"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: end_station_name
+        description: "Trip end station name"
+      - name: end_station_id
+        description: "Trip end station id"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_lat
+        description: "Trip start latitude"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_lng
+        description: "Trip start longitude"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: end_lat
+        description: "Trip end latitude"
+      - name: end_lng
+        description: "Trip end longitude"
+      - name: member_casual
+        description: "User membership classification"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+  - name: stg_citibike_202410
+    description: "Staging model for Citibike data from October 2024"
+    tests:
+      - dbt_utils.expression_is_true:
+          expression: "ended_at IS NULL OR ended_at >= started_at"
+          config:
+            severity: warn  # Changed from error to warn
+      - dbt_utils.expression_is_true:
+          expression: "end_station_name IS NULL OR end_station_id IS NOT NULL"
+          config:
+            severity: warn  # Changed from error to warn
+    columns:
+      - name: ride_id
+        description: "Unique ride identifier"
+        tests:
+          - unique:
+              config:
+                severity: warn
+          - not_null:
+              config:
+                severity: warn
+      - name: rideable_type
+        description: "Classifier for e-bike or classic"
+      - name: started_at
+        description: "Trip start timestamp"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: ended_at
+        description: "Trip end timestamp"
+      - name: start_station_name
+        description: "Trip start station name"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_station_id
+        description: "Trip start station ID"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: end_station_name
+        description: "Trip end station name"
+      - name: end_station_id
+        description: "Trip end station id"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_lat
+        description: "Trip start latitude"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_lng
+        description: "Trip start longitude"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: end_lat
+        description: "Trip end latitude"
+      - name: end_lng
+        description: "Trip end longitude"
+      - name: member_casual
+        description: "User membership classification"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+  - name: stg_citibike_202411
+    description: "Staging model for Citibike data from November 2024"
+    tests:
+      - dbt_utils.expression_is_true:
+          expression: "ended_at IS NULL OR ended_at >= started_at"
+          config:
+            severity: warn  # Changed from error to warn
+      - dbt_utils.expression_is_true:
+          expression: "end_station_name IS NULL OR end_station_id IS NOT NULL"
+          config:
+            severity: warn  # Changed from error to warn
+    columns:
+      - name: ride_id
+        description: "Unique ride identifier"
+        tests:
+          - unique:
+              config:
+                severity: warn
+          - not_null:
+              config:
+                severity: warn
+      - name: rideable_type
+        description: "Classifier for e-bike or classic"
+      - name: started_at
+        description: "Trip start timestamp"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: ended_at
+        description: "Trip end timestamp"
+      - name: start_station_name
+        description: "Trip start station name"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_station_id
+        description: "Trip start station ID"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: end_station_name
+        description: "Trip end station name"
+      - name: end_station_id
+        description: "Trip end station id"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_lat
+        description: "Trip start latitude"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_lng
+        description: "Trip start longitude"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: end_lat
+        description: "Trip end latitude"
+      - name: end_lng
+        description: "Trip end longitude"
+      - name: member_casual
+        description: "User membership classification"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+  - name: stg_citibike_202412
+    description: "Staging model for Citibike data from December 2024"
+    tests:
+      - dbt_utils.expression_is_true:
+          expression: "ended_at IS NULL OR ended_at >= started_at"
+          config:
+            severity: warn  # Changed from error to warn
+      - dbt_utils.expression_is_true:
+          expression: "end_station_name IS NULL OR end_station_id IS NOT NULL"
+          config:
+            severity: warn  # Changed from error to warn
+    columns:
+      - name: ride_id
+        description: "Unique ride identifier"
+        tests:
+          - unique:
+              config:
+                severity: warn
+          - not_null:
+              config:
+                severity: warn
+      - name: rideable_type
+        description: "Classifier for e-bike or classic"
+      - name: started_at
+        description: "Trip start timestamp"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: ended_at
+        description: "Trip end timestamp"
+      - name: start_station_name
+        description: "Trip start station name"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_station_id
+        description: "Trip start station ID"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: end_station_name
+        description: "Trip end station name"
+      - name: end_station_id
+        description: "Trip end station id"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_lat
+        description: "Trip start latitude"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_lng
+        description: "Trip start longitude"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: end_lat
+        description: "Trip end latitude"
+      - name: end_lng
+        description: "Trip end longitude"
+      - name: member_casual
+        description: "User membership classification"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+  - name: stg_citibike_202501
+    description: "Staging model for Citibike data from January 2025"
+    tests:
+      - dbt_utils.expression_is_true:
+          expression: "ended_at IS NULL OR ended_at >= started_at"
+          config:
+            severity: warn  # Changed from error to warn
+      - dbt_utils.expression_is_true:
+          expression: "end_station_name IS NULL OR end_station_id IS NOT NULL"
+          config:
+            severity: warn  # Changed from error to warn
+    columns:
+      - name: ride_id
+        description: "Unique ride identifier"
+        tests:
+          - unique:
+              config:
+                severity: warn
+          - not_null:
+              config:
+                severity: warn
+      - name: rideable_type
+        description: "Classifier for e-bike or classic"
+      - name: started_at
+        description: "Trip start timestamp"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: ended_at
+        description: "Trip end timestamp"
+      - name: start_station_name
+        description: "Trip start station name"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_station_id
+        description: "Trip start station ID"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: end_station_name
+        description: "Trip end station name"
+      - name: end_station_id
+        description: "Trip end station id"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_lat
+        description: "Trip start latitude"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_lng
+        description: "Trip start longitude"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: end_lat
+        description: "Trip end latitude"
+      - name: end_lng
+        description: "Trip end longitude"
+      - name: member_casual
+        description: "User membership classification"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+  - name: stg_citibike_202502
+    description: "Staging model for Citibike data from February 2025"
+    tests:
+      - dbt_utils.expression_is_true:
+          expression: "ended_at IS NULL OR ended_at >= started_at"
+          config:
+            severity: warn  # Changed from error to warn
+      - dbt_utils.expression_is_true:
+          expression: "end_station_name IS NULL OR end_station_id IS NOT NULL"
+          config:
+            severity: warn  # Changed from error to warn
+    columns:
+      - name: ride_id
+        description: "Unique ride identifier"
+        tests:
+          - unique:
+              config:
+                severity: warn
+          - not_null:
+              config:
+                severity: warn
+      - name: rideable_type
+        description: "Classifier for e-bike or classic"
+      - name: started_at
+        description: "Trip start timestamp"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: ended_at
+        description: "Trip end timestamp"
+      - name: start_station_name
+        description: "Trip start station name"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_station_id
+        description: "Trip start station ID"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: end_station_name
+        description: "Trip end station name"
+      - name: end_station_id
+        description: "Trip end station id"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_lat
+        description: "Trip start latitude"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_lng
+        description: "Trip start longitude"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: end_lat
+        description: "Trip end latitude"
+      - name: end_lng
+        description: "Trip end longitude"
+      - name: member_casual
+        description: "User membership classification"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+  - name: stg_citibike_202503
+    description: "Staging model for Citibike data from March 2025"
+    tests:
+      - dbt_utils.expression_is_true:
+          expression: "ended_at IS NULL OR ended_at >= started_at"
+          config:
+            severity: warn  # Changed from error to warn
+      - dbt_utils.expression_is_true:
+          expression: "end_station_name IS NULL OR end_station_id IS NOT NULL"
+          config:
+            severity: warn  # Changed from error to warn
+    columns:
+      - name: ride_id
+        description: "Unique ride identifier"
+        tests:
+          - unique:
+              config:
+                severity: warn
+          - not_null:
+              config:
+                severity: warn
+      - name: rideable_type
+        description: "Classifier for e-bike or classic"
+      - name: started_at
+        description: "Trip start timestamp"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: ended_at
+        description: "Trip end timestamp"
+      - name: start_station_name
+        description: "Trip start station name"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_station_id
+        description: "Trip start station ID"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: end_station_name
+        description: "Trip end station name"
+      - name: end_station_id
+        description: "Trip end station id"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_lat
+        description: "Trip start latitude"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_lng
+        description: "Trip start longitude"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: end_lat
+        description: "Trip end latitude"
+      - name: end_lng
+        description: "Trip end longitude"
+      - name: member_casual
+        description: "User membership classification"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+  - name: stg_citibike_202504
+    description: "Staging model for Citibike data from April 2025"
+    tests:
+      - dbt_utils.expression_is_true:
+          expression: "ended_at IS NULL OR ended_at >= started_at"
+          config:
+            severity: warn  # Changed from error to warn
+      - dbt_utils.expression_is_true:
+          expression: "end_station_name IS NULL OR end_station_id IS NOT NULL"
+          config:
+            severity: warn  # Changed from error to warn
+    columns:
+      - name: ride_id
+        description: "Unique ride identifier"
+        tests:
+          - unique:
+              config:
+                severity: warn
+          - not_null:
+              config:
+                severity: warn
+      - name: rideable_type
+        description: "Classifier for e-bike or classic"
+      - name: started_at
+        description: "Trip start timestamp"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: ended_at
+        description: "Trip end timestamp"
+      - name: start_station_name
+        description: "Trip start station name"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_station_id
+        description: "Trip start station ID"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: end_station_name
+        description: "Trip end station name"
+      - name: end_station_id
+        description: "Trip end station id"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_lat
+        description: "Trip start latitude"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_lng
+        description: "Trip start longitude"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: end_lat
+        description: "Trip end latitude"
+      - name: end_lng
+        description: "Trip end longitude"
+      - name: member_casual
+        description: "User membership classification"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+  - name: stg_citibike_202505
+    description: "Staging model for Citibike data from May 2025"
+    tests:
+      - dbt_utils.expression_is_true:
+          expression: "ended_at IS NULL OR ended_at >= started_at"
+          config:
+            severity: warn  # Changed from error to warn
+      - dbt_utils.expression_is_true:
+          expression: "end_station_name IS NULL OR end_station_id IS NOT NULL"
+          config:
+            severity: warn  # Changed from error to warn
+    columns:
+      - name: ride_id
+        description: "Unique ride identifier"
+        tests:
+          - unique:
+              config:
+                severity: warn
+          - not_null:
+              config:
+                severity: warn
+      - name: rideable_type
+        description: "Classifier for e-bike or classic"
+      - name: started_at
+        description: "Trip start timestamp"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: ended_at
+        description: "Trip end timestamp"
+      - name: start_station_name
+        description: "Trip start station name"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_station_id
+        description: "Trip start station ID"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: end_station_name
+        description: "Trip end station name"
+      - name: end_station_id
+        description: "Trip end station id"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_lat
+        description: "Trip start latitude"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: start_lng
+        description: "Trip start longitude"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: end_lat
+        description: "Trip end latitude"
+      - name: end_lng
+        description: "Trip end longitude"
+      - name: member_casual
+        description: "User membership classification"
+        tests:
+          - not_null:
+              config:
+                severity: warn
+  - name: stg_citibike_all_clean
+    description: "Clean citibike data with data quality validation"
+    tests:
+      # Test that error rate is under 1%
+      - dbt_utils.expression_is_true:
+          expression: "data_quality_error_rate < 1.0"
+          config:
+            severity: error  # This will FAIL the build
+      # Test data integrity on clean dataset
+      - dbt_utils.expression_is_true:
+          expression: "ended_at IS NULL OR ended_at >= started_at"
+          config:
+            severity: error
+      - dbt_utils.expression_is_true:
+          expression: "end_station_name IS NULL OR end_station_id IS NOT NULL"
+          config:
+            severity: error
+    columns:
+      - name: ride_id
+        description: "Unique ride identifier"
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: started_at
+        description: "Trip start timestamp"
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: data_quality_error_rate
+        description: "Percentage of rows that failed validation"
+        tests:
+          - not_null:
+              config:
+                severity: error
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1
+              config:
+                severity: error
+      - name: source_model
+        description: "Source staging model name"
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: stg_citibike_all_errors
+        description: "All rows that failed data quality checks"
+        columns:
+          - name: error_reason
+            description: "Reason for data quality failure"
+            tests:
+              - not_null:
+                  config:
+                    severity: warn
+          - name: source_model
+            description: "Source model where error occurred"
+            tests:
+              - not_null:
+                  config:
+                    severity: warn
