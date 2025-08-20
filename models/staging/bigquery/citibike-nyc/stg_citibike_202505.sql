@@ -14,4 +14,4 @@ select
     end_lat, 
     end_lng, 
     member_casual 
-from {{source('citibike_nyc_2025', '202504-citibike-tripdata')}}
+from {{source('citibike_nyc_2025', '202505-citibike-tripdata')}}

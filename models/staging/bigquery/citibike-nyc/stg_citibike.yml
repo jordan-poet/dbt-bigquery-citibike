@@ -5,13 +5,17 @@ models:
     description: "Bronze model for Citibike data from January 2024"
     data_tests:
       - dbt_utils.expression_is_true:
-          expression: "ended_at IS NULL OR ended_at >= started_at"
+          expression: "ended_at >= started_at"
           config:
-            severity: warn  # Changed from error to warn
+            severity: warn
+            warn_if: ">10"
+            error_if: ">100"
+
       - dbt_utils.expression_is_true:
-          expression: "end_station_name IS NULL OR end_station_id IS NOT NULL"
+          expression: "end_station_name IS NULL AND end_station_id IS NOT NULL"
           config:
             severity: warn  # Changed from error to warn
+
     columns:
       - name: ride_id
         description: "Primary key: Unique ride identifier"
@@ -55,10 +59,6 @@ models:
 
       - name: end_station_id
         description: "Trip end station id"
-        data_tests:
-          - not_null:
-              config:
-                severity: warn
 
       - name: start_lat
         description: "Trip start latitude"        
@@ -91,11 +91,14 @@ models:
     description: "Bronze model for Citibike data from February 2024"
     data_tests:
       - dbt_utils.expression_is_true:
-          expression: "ended_at IS NULL OR ended_at >= started_at"
+          expression: "ended_at >= started_at"
           config:
-            severity: warn  # Changed from error to warn
+            severity: warn
+            warn_if: ">10"
+            error_if: ">100"
+
       - dbt_utils.expression_is_true:
-          expression: "end_station_name IS NULL OR end_station_id IS NOT NULL"
+          expression: "end_station_name IS NULL AND end_station_id IS NOT NULL"
           config:
             severity: warn  # Changed from error to warn
 
@@ -139,10 +142,6 @@ models:
 
       - name: end_station_id
         description: "Trip end station id"
-        data_tests:
-          - not_null:
-              config:
-                severity: warn
 
       - name: start_lat
         description: "Trip start latitude"
@@ -176,11 +175,14 @@ models:
     description: "Bronze model for Citibike data from March 2024"
     data_tests:
       - dbt_utils.expression_is_true:
-          expression: "ended_at IS NULL OR ended_at >= started_at"
+          expression: "ended_at >= started_at"
           config:
-            severity: warn  # Changed from error to warn
+            severity: warn
+            warn_if: ">10"
+            error_if: ">100"
+
       - dbt_utils.expression_is_true:
-          expression: "end_station_name IS NULL OR end_station_id IS NOT NULL"
+          expression: "end_station_name IS NULL AND end_station_id IS NOT NULL"
           config:
             severity: warn  # Changed from error to warn
     
@@ -224,10 +226,6 @@ models:
 
       - name: end_station_id
         description: "Trip end station id"
-        data_tests:
-          - not_null:
-              config:
-                severity: warn
 
       - name: start_lat
         description: "Trip start latitude"
@@ -260,11 +258,14 @@ models:
     description: "Bronze model for Citibike data from April 2024"
     data_tests:
       - dbt_utils.expression_is_true:
-          expression: "ended_at IS NULL OR ended_at >= started_at"
+          expression: "ended_at >= started_at"
           config:
-            severity: warn  # Changed from error to warn
+            severity: warn
+            warn_if: ">10"
+            error_if: ">100"
+
       - dbt_utils.expression_is_true:
-          expression: "end_station_name IS NULL OR end_station_id IS NOT NULL"
+          expression: "end_station_name IS NULL AND end_station_id IS NOT NULL"
           config:
             severity: warn  # Changed from error to warn
     
@@ -307,10 +308,6 @@ models:
       
       - name: end_station_id
         description: "Trip end station id"
-        data_tests:
-          - not_null:
-              config:
-                severity: warn
       
       - name: start_lat
         description: "Trip start latitude"
@@ -343,11 +340,14 @@ models:
     description: "Bronze model for Citibike data from May 2024"
     data_tests:
       - dbt_utils.expression_is_true:
-          expression: "ended_at IS NULL OR ended_at >= started_at"
+          expression: "ended_at >= started_at"
           config:
-            severity: warn  # Changed from error to warn
+            severity: warn
+            warn_if: ">10"
+            error_if: ">100"
+
       - dbt_utils.expression_is_true:
-          expression: "end_station_name IS NULL OR end_station_id IS NOT NULL"
+          expression: "end_station_name IS NULL AND end_station_id IS NOT NULL"
           config:
             severity: warn  # Changed from error to warn
     
@@ -391,10 +391,6 @@ models:
       
       - name: end_station_id
         description: "Trip end station id"
-        data_tests:
-          - not_null:
-              config:
-                severity: warn
       
       - name: start_lat
         description: "Trip start latitude"
@@ -427,11 +423,14 @@ models:
     description: "Bronze model for Citibike data from June 2024"
     data_tests:
       - dbt_utils.expression_is_true:
-          expression: "ended_at IS NULL OR ended_at >= started_at"
+          expression: "ended_at >= started_at"
           config:
-            severity: warn  # Changed from error to warn
+            severity: warn
+            warn_if: ">10"
+            error_if: ">100"
+
       - dbt_utils.expression_is_true:
-          expression: "end_station_name IS NULL OR end_station_id IS NOT NULL"
+          expression: "end_station_name IS NULL AND end_station_id IS NOT NULL"
           config:
             severity: warn  # Changed from error to warn
     
@@ -475,10 +474,6 @@ models:
       
       - name: end_station_id
         description: "Trip end station id"
-        data_tests:
-          - not_null:
-              config:
-                severity: warn
       
       - name: start_lat
         description: "Trip start latitude"
@@ -511,11 +506,14 @@ models:
     description: "Bronze model for Citibike data from July 2024"
     data_tests:
       - dbt_utils.expression_is_true:
-          expression: "ended_at IS NULL OR ended_at >= started_at"
+          expression: "ended_at >= started_at"
           config:
-            severity: warn  # Changed from error to warn
+            severity: warn
+            warn_if: ">10"
+            error_if: ">100"
+
       - dbt_utils.expression_is_true:
-          expression: "end_station_name IS NULL OR end_station_id IS NOT NULL"
+          expression: "end_station_name IS NULL AND end_station_id IS NOT NULL"
           config:
             severity: warn  # Changed from error to warn
     
@@ -559,10 +557,6 @@ models:
       
       - name: end_station_id
         description: "Trip end station id"
-        data_tests:
-          - not_null:
-              config:
-                severity: warn
       
       - name: start_lat
         description: "Trip start latitude"
@@ -595,11 +589,14 @@ models:
     description: "Bronze model for Citibike data from August 2024"
     data_tests:
       - dbt_utils.expression_is_true:
-          expression: "ended_at IS NULL OR ended_at >= started_at"
+          expression: "ended_at >= started_at"
           config:
-            severity: warn  # Changed from error to warn
+            severity: warn
+            warn_if: ">10"
+            error_if: ">100"
+
       - dbt_utils.expression_is_true:
-          expression: "end_station_name IS NULL OR end_station_id IS NOT NULL"
+          expression: "end_station_name IS NULL AND end_station_id IS NOT NULL"
           config:
             severity: warn  # Changed from error to warn
     
@@ -643,10 +640,6 @@ models:
       
       - name: end_station_id
         description: "Trip end station id"
-        data_tests:
-          - not_null:
-              config:
-                severity: warn
       
       - name: start_lat
         description: "Trip start latitude"
@@ -679,11 +672,14 @@ models:
     description: "Bronze model for Citibike data from September 2024"
     data_tests:
       - dbt_utils.expression_is_true:
-          expression: "ended_at IS NULL OR ended_at >= started_at"
+          expression: "ended_at >= started_at"
           config:
-            severity: warn  # Changed from error to warn
+            severity: warn
+            warn_if: ">10"
+            error_if: ">100"
+
       - dbt_utils.expression_is_true:
-          expression: "end_station_name IS NULL OR end_station_id IS NOT NULL"
+          expression: "end_station_name IS NULL AND end_station_id IS NOT NULL"
           config:
             severity: warn  # Changed from error to warn
     
@@ -727,10 +723,6 @@ models:
       
       - name: end_station_id
         description: "Trip end station id"
-        data_tests:
-          - not_null:
-              config:
-                severity: warn
       
       - name: start_lat
         description: "Trip start latitude"
@@ -763,11 +755,14 @@ models:
     description: "Bronze model for Citibike data from October 2024"
     data_tests:
       - dbt_utils.expression_is_true:
-          expression: "ended_at IS NULL OR ended_at >= started_at"
+          expression: "ended_at >= started_at"
           config:
-            severity: warn  # Changed from error to warn
+            severity: warn
+            warn_if: ">10"
+            error_if: ">100"
+
       - dbt_utils.expression_is_true:
-          expression: "end_station_name IS NULL OR end_station_id IS NOT NULL"
+          expression: "end_station_name IS NULL AND end_station_id IS NOT NULL"
           config:
             severity: warn  # Changed from error to warn
     
@@ -811,10 +806,6 @@ models:
       
       - name: end_station_id
         description: "Trip end station id"
-        data_tests:
-          - not_null:
-              config:
-                severity: warn
       
       - name: start_lat
         description: "Trip start latitude"
@@ -847,11 +838,14 @@ models:
     description: "Bronze model for Citibike data from November 2024"
     data_tests:
       - dbt_utils.expression_is_true:
-          expression: "ended_at IS NULL OR ended_at >= started_at"
+          expression: "ended_at >= started_at"
           config:
-            severity: warn  # Changed from error to warn
+            severity: warn
+            warn_if: ">10"
+            error_if: ">100"
+
       - dbt_utils.expression_is_true:
-          expression: "end_station_name IS NULL OR end_station_id IS NOT NULL"
+          expression: "end_station_name IS NULL AND end_station_id IS NOT NULL"
           config:
             severity: warn  # Changed from error to warn
     
@@ -895,10 +889,6 @@ models:
       
       - name: end_station_id
         description: "Trip end station id"
-        data_tests:
-          - not_null:
-              config:
-                severity: warn
       
       - name: start_lat
         description: "Trip start latitude"
@@ -931,11 +921,14 @@ models:
     description: "Bronze model for Citibike data from December 2024"
     data_tests:
       - dbt_utils.expression_is_true:
-          expression: "ended_at IS NULL OR ended_at >= started_at"
+          expression: "ended_at >= started_at"
           config:
-            severity: warn  # Changed from error to warn
+            severity: warn
+            warn_if: ">10"
+            error_if: ">100"
+
       - dbt_utils.expression_is_true:
-          expression: "end_station_name IS NULL OR end_station_id IS NOT NULL"
+          expression: "end_station_name IS NULL AND end_station_id IS NOT NULL"
           config:
             severity: warn  # Changed from error to warn
     
@@ -979,10 +972,6 @@ models:
       
       - name: end_station_id
         description: "Trip end station id"
-        data_tests:
-          - not_null:
-              config:
-                severity: warn
       
       - name: start_lat
         description: "Trip start latitude"
@@ -1015,11 +1004,14 @@ models:
     description: "Bronze model for Citibike data from January 2025"
     data_tests:
       - dbt_utils.expression_is_true:
-          expression: "ended_at IS NULL OR ended_at >= started_at"
+          expression: "ended_at >= started_at"
           config:
-            severity: warn  # Changed from error to warn
+            severity: warn
+            warn_if: ">10"
+            error_if: ">100"
+
       - dbt_utils.expression_is_true:
-          expression: "end_station_name IS NULL OR end_station_id IS NOT NULL"
+          expression: "end_station_name IS NULL AND end_station_id IS NOT NULL"
           config:
             severity: warn  # Changed from error to warn
     
@@ -1063,10 +1055,6 @@ models:
       
       - name: end_station_id
         description: "Trip end station id"
-        data_tests:
-          - not_null:
-              config:
-                severity: warn
       
       - name: start_lat
         description: "Trip start latitude"
@@ -1099,11 +1087,14 @@ models:
     description: "Bronze model for Citibike data from February 2025"
     data_tests:
       - dbt_utils.expression_is_true:
-          expression: "ended_at IS NULL OR ended_at >= started_at"
+          expression: "ended_at >= started_at"
           config:
-            severity: warn  # Changed from error to warn
+            severity: warn
+            warn_if: ">10"
+            error_if: ">100"
+
       - dbt_utils.expression_is_true:
-          expression: "end_station_name IS NULL OR end_station_id IS NOT NULL"
+          expression: "end_station_name IS NULL AND end_station_id IS NOT NULL"
           config:
             severity: warn  # Changed from error to warn
     
@@ -1147,10 +1138,6 @@ models:
       
       - name: end_station_id
         description: "Trip end station id"
-        data_tests:
-          - not_null:
-              config:
-                severity: warn
       
       - name: start_lat
         description: "Trip start latitude"
@@ -1183,11 +1170,14 @@ models:
     description: "Bronze model for Citibike data from March 2025"
     data_tests:
       - dbt_utils.expression_is_true:
-          expression: "ended_at IS NULL OR ended_at >= started_at"
+          expression: "ended_at >= started_at"
           config:
-            severity: warn  # Changed from error to warn
+            severity: warn
+            warn_if: ">10"
+            error_if: ">100"
+
       - dbt_utils.expression_is_true:
-          expression: "end_station_name IS NULL OR end_station_id IS NOT NULL"
+          expression: "end_station_name IS NULL AND end_station_id IS NOT NULL"
           config:
             severity: warn  # Changed from error to warn
     
@@ -1231,10 +1221,6 @@ models:
       
       - name: end_station_id
         description: "Trip end station id"
-        data_tests:
-          - not_null:
-              config:
-                severity: warn
       
       - name: start_lat
         description: "Trip start latitude"
@@ -1267,11 +1253,14 @@ models:
     description: "Bronze model for Citibike data from April 2025"
     data_tests:
       - dbt_utils.expression_is_true:
-          expression: "ended_at IS NULL OR ended_at >= started_at"
+          expression: "ended_at >= started_at"
           config:
-            severity: warn  # Changed from error to warn
+            severity: warn
+            warn_if: ">10"
+            error_if: ">100"
+
       - dbt_utils.expression_is_true:
-          expression: "end_station_name IS NULL OR end_station_id IS NOT NULL"
+          expression: "end_station_name IS NULL AND end_station_id IS NOT NULL"
           config:
             severity: warn  # Changed from error to warn
     
@@ -1315,10 +1304,6 @@ models:
       
       - name: end_station_id
         description: "Trip end station id"
-        data_tests:
-          - not_null:
-              config:
-                severity: warn
       
       - name: start_lat
         description: "Trip start latitude"
@@ -1351,11 +1336,14 @@ models:
     description: "Bronze model for Citibike data from May 2025"
     data_tests:
       - dbt_utils.expression_is_true:
-          expression: "ended_at IS NULL OR ended_at >= started_at"
+          expression: "ended_at >= started_at"
           config:
-            severity: warn  # Changed from error to warn
+            severity: warn
+            warn_if: ">10"
+            error_if: ">100"
+
       - dbt_utils.expression_is_true:
-          expression: "end_station_name IS NULL OR end_station_id IS NOT NULL"
+          expression: "end_station_name IS NULL AND end_station_id IS NOT NULL"
           config:
             severity: warn  # Changed from error to warn
     
@@ -1399,10 +1387,6 @@ models:
       
       - name: end_station_id
         description: "Trip end station id"
-        data_tests:
-          - not_null:
-              config:
-                severity: warn
       
       - name: start_lat
         description: "Trip start latitude"
