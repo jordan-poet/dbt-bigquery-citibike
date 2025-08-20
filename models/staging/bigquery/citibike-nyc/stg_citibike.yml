@@ -12,7 +12,7 @@ models:
             error_if: ">100"
 
       - dbt_utils.expression_is_true:
-          expression: "end_station_name IS NULL AND end_station_id IS NOT NULL"
+          expression: "end_station_id IS NOT NULL AND end_station_name IS NULL"
           config:
             severity: warn  # Changed from error to warn
 
@@ -98,7 +98,7 @@ models:
             error_if: ">100"
 
       - dbt_utils.expression_is_true:
-          expression: "end_station_name IS NULL AND end_station_id IS NOT NULL"
+          expression: "end_station_id IS NOT NULL AND end_station_name IS NULL"
           config:
             severity: warn  # Changed from error to warn
 
@@ -182,7 +182,7 @@ models:
             error_if: ">100"
 
       - dbt_utils.expression_is_true:
-          expression: "end_station_name IS NULL AND end_station_id IS NOT NULL"
+          expression: "end_station_id IS NOT NULL AND end_station_name IS NULL"
           config:
             severity: warn  # Changed from error to warn
     
@@ -265,7 +265,7 @@ models:
             error_if: ">100"
 
       - dbt_utils.expression_is_true:
-          expression: "end_station_name IS NULL AND end_station_id IS NOT NULL"
+          expression: "end_station_id IS NOT NULL AND end_station_name IS NULL"
           config:
             severity: warn  # Changed from error to warn
     
@@ -347,7 +347,7 @@ models:
             error_if: ">100"
 
       - dbt_utils.expression_is_true:
-          expression: "end_station_name IS NULL AND end_station_id IS NOT NULL"
+          expression: "end_station_id IS NOT NULL AND end_station_name IS NULL"
           config:
             severity: warn  # Changed from error to warn
     
@@ -430,7 +430,7 @@ models:
             error_if: ">100"
 
       - dbt_utils.expression_is_true:
-          expression: "end_station_name IS NULL AND end_station_id IS NOT NULL"
+          expression: "end_station_id IS NOT NULL AND end_station_name IS NULL"
           config:
             severity: warn  # Changed from error to warn
     
@@ -513,7 +513,7 @@ models:
             error_if: ">100"
 
       - dbt_utils.expression_is_true:
-          expression: "end_station_name IS NULL AND end_station_id IS NOT NULL"
+          expression: "end_station_id IS NOT NULL AND end_station_name IS NULL"
           config:
             severity: warn  # Changed from error to warn
     
@@ -596,7 +596,7 @@ models:
             error_if: ">100"
 
       - dbt_utils.expression_is_true:
-          expression: "end_station_name IS NULL AND end_station_id IS NOT NULL"
+          expression: "end_station_id IS NOT NULL AND end_station_name IS NULL"
           config:
             severity: warn  # Changed from error to warn
     
@@ -679,7 +679,7 @@ models:
             error_if: ">100"
 
       - dbt_utils.expression_is_true:
-          expression: "end_station_name IS NULL AND end_station_id IS NOT NULL"
+          expression: "end_station_id IS NOT NULL AND end_station_name IS NULL"
           config:
             severity: warn  # Changed from error to warn
     
@@ -762,7 +762,7 @@ models:
             error_if: ">100"
 
       - dbt_utils.expression_is_true:
-          expression: "end_station_name IS NULL AND end_station_id IS NOT NULL"
+          expression: "end_station_id IS NOT NULL AND end_station_name IS NULL"
           config:
             severity: warn  # Changed from error to warn
     
@@ -845,7 +845,7 @@ models:
             error_if: ">100"
 
       - dbt_utils.expression_is_true:
-          expression: "end_station_name IS NULL AND end_station_id IS NOT NULL"
+          expression: "end_station_id IS NOT NULL AND end_station_name IS NULL"
           config:
             severity: warn  # Changed from error to warn
     
@@ -928,7 +928,7 @@ models:
             error_if: ">100"
 
       - dbt_utils.expression_is_true:
-          expression: "end_station_name IS NULL AND end_station_id IS NOT NULL"
+          expression: "end_station_id IS NOT NULL AND end_station_name IS NULL"
           config:
             severity: warn  # Changed from error to warn
     
@@ -1011,7 +1011,7 @@ models:
             error_if: ">100"
 
       - dbt_utils.expression_is_true:
-          expression: "end_station_name IS NULL AND end_station_id IS NOT NULL"
+          expression: "end_station_id IS NOT NULL AND end_station_name IS NULL"
           config:
             severity: warn  # Changed from error to warn
     
@@ -1094,7 +1094,7 @@ models:
             error_if: ">100"
 
       - dbt_utils.expression_is_true:
-          expression: "end_station_name IS NULL AND end_station_id IS NOT NULL"
+          expression: "end_station_id IS NOT NULL AND end_station_name IS NULL"
           config:
             severity: warn  # Changed from error to warn
     
@@ -1177,7 +1177,7 @@ models:
             error_if: ">100"
 
       - dbt_utils.expression_is_true:
-          expression: "end_station_name IS NULL AND end_station_id IS NOT NULL"
+          expression: "end_station_id IS NOT NULL AND end_station_name IS NULL"
           config:
             severity: warn  # Changed from error to warn
     
@@ -1260,7 +1260,7 @@ models:
             error_if: ">100"
 
       - dbt_utils.expression_is_true:
-          expression: "end_station_name IS NULL AND end_station_id IS NOT NULL"
+          expression: "end_station_id IS NOT NULL AND end_station_name IS NULL"
           config:
             severity: warn  # Changed from error to warn
     
@@ -1343,7 +1343,7 @@ models:
             error_if: ">100"
 
       - dbt_utils.expression_is_true:
-          expression: "end_station_name IS NULL AND end_station_id IS NOT NULL"
+          expression: "end_station_id IS NOT NULL AND end_station_name IS NULL"
           config:
             severity: warn  # Changed from error to warn
     
