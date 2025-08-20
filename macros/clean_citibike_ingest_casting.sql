@@ -1,7 +1,7 @@
 -- cleans citibike data during ingestion using safecasting
 -- this is for the files with the space in end_station_name column header
 
-{% macro clean_citibike_staging(source_name, table_name) %}
+{% macro clean_citibike_staging(table_name) %}
 
 SELECT 
     SAFE_CAST(ride_id AS STRING) AS ride_id, 
@@ -17,7 +17,7 @@ SELECT
     SAFE_CAST(end_lat AS FLOAT64) AS end_lat, 
     SAFE_CAST(end_lng AS FLOAT64) AS end_lng, 
     SAFE_CAST(member_casual AS STRING) AS member_casual
-FROM {{ source(source_name, table_name) }}
+FROM {{ ref(table_name) }}
 WHERE ride_id IS NOT NULL
   AND SAFE_CAST(started_at AS TIMESTAMP) IS NOT NULL
 
