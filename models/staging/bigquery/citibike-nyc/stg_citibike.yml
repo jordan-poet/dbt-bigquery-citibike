@@ -24,7 +24,7 @@ models:
                 severity: error
 
       - name: rideable_type
-        description: "Classifier for e-bike or classic"
+        description: '{{ doc("rideable_type") }}'
 
       - name: started_at
         description: "Trip start timestamp"
@@ -81,7 +81,7 @@ models:
         description: "Trip end longitude"
         
       - name: member_casual
-        description: "User membership classification"
+        description: '{{ doc("member_casual") }}'
         data_tests:
           - not_null:
               config:
@@ -108,7 +108,7 @@ models:
                 severity: error
 
       - name: rideable_type
-        description: "Classifier for e-bike or classic"
+        description: '{{ doc("rideable_type") }}'
 
       - name: started_at
         description: "Trip start timestamp"
@@ -166,7 +166,7 @@ models:
         description: "Trip end longitude"
 
       - name: member_casual
-        description: "User membership classification"
+        description: '{{ doc("member_casual") }}'
         data_tests:
           - not_null:
               config:
@@ -193,7 +193,7 @@ models:
                 severity: error
 
       - name: rideable_type
-        description: "Classifier for e-bike or classic"
+        description: '{{ doc("rideable_type") }}'
 
       - name: started_at
         description: "Trip start timestamp"
@@ -250,7 +250,7 @@ models:
         description: "Trip end longitude"
 
       - name: member_casual
-        description: "User membership classification"
+        description: '{{ doc("member_casual") }}'
         data_tests:
           - not_null:
               config:
@@ -277,7 +277,7 @@ models:
                 severity: error
 
       - name: rideable_type
-        description: "Classifier for e-bike or classic"
+        description: '{{ doc("rideable_type") }}'
       
       - name: started_at
         description: "Trip start timestamp"
@@ -333,7 +333,7 @@ models:
         description: "Trip end longitude"
       
       - name: member_casual
-        description: "User membership classification"
+        description: '{{ doc("member_casual") }}'
         data_tests:
           - not_null:
               config:
@@ -360,7 +360,7 @@ models:
                 severity: error
 
       - name: rideable_type
-        description: "Classifier for e-bike or classic"
+        description: '{{ doc("rideable_type") }}'
       
       - name: started_at
         description: "Trip start timestamp"
@@ -417,7 +417,7 @@ models:
         description: "Trip end longitude"
       
       - name: member_casual
-        description: "User membership classification"
+        description: '{{ doc("member_casual") }}'
         data_tests:
           - not_null:
               config:
@@ -444,7 +444,7 @@ models:
                 severity: error
 
       - name: rideable_type
-        description: "Classifier for e-bike or classic"
+        description: '{{ doc("rideable_type") }}'
       
       - name: started_at
         description: "Trip start timestamp"
@@ -501,7 +501,7 @@ models:
         description: "Trip end longitude"
       
       - name: member_casual
-        description: "User membership classification"
+        description: '{{ doc("member_casual") }}'
         data_tests:
           - not_null:
               config:
@@ -528,7 +528,7 @@ models:
                 severity: error
 
       - name: rideable_type
-        description: "Classifier for e-bike or classic"
+        description: '{{ doc("rideable_type") }}'
       
       - name: started_at
         description: "Trip start timestamp"
@@ -585,7 +585,7 @@ models:
         description: "Trip end longitude"
       
       - name: member_casual
-        description: "User membership classification"
+        description: '{{ doc("member_casual") }}'
         data_tests:
           - not_null:
               config:
@@ -612,7 +612,7 @@ models:
                 severity: error
 
       - name: rideable_type
-        description: "Classifier for e-bike or classic"
+        description: '{{ doc("rideable_type") }}'
       
       - name: started_at
         description: "Trip start timestamp"
@@ -669,7 +669,7 @@ models:
         description: "Trip end longitude"
       
       - name: member_casual
-        description: "User membership classification"
+        description: '{{ doc("member_casual") }}'
         data_tests:
           - not_null:
               config:
@@ -696,7 +696,7 @@ models:
                 severity: error
 
       - name: rideable_type
-        description: "Classifier for e-bike or classic"
+        description: '{{ doc("rideable_type") }}'
       
       - name: started_at
         description: "Trip start timestamp"
@@ -753,7 +753,7 @@ models:
         description: "Trip end longitude"
       
       - name: member_casual
-        description: "User membership classification"
+        description: '{{ doc("member_casual") }}'
         data_tests:
           - not_null:
               config:
@@ -780,7 +780,7 @@ models:
                 severity: error
 
       - name: rideable_type
-        description: "Classifier for e-bike or classic"
+        description: '{{ doc("rideable_type") }}'
       
       - name: started_at
         description: "Trip start timestamp"
@@ -837,7 +837,7 @@ models:
         description: "Trip end longitude"
       
       - name: member_casual
-        description: "User membership classification"
+        description: '{{ doc("member_casual") }}'
         data_tests:
           - not_null:
               config:
@@ -864,7 +864,7 @@ models:
                 severity: error
 
       - name: rideable_type
-        description: "Classifier for e-bike or classic"
+        description: '{{ doc("rideable_type") }}'
       
       - name: started_at
         description: "Trip start timestamp"
@@ -921,7 +921,7 @@ models:
         description: "Trip end longitude"
       
       - name: member_casual
-        description: "User membership classification"
+        description: '{{ doc("member_casual") }}'
         data_tests:
           - not_null:
               config:
@@ -948,7 +948,7 @@ models:
                 severity: error
 
       - name: rideable_type
-        description: "Classifier for e-bike or classic"
+        description: '{{ doc("rideable_type") }}'
       
       - name: started_at
         description: "Trip start timestamp"
@@ -1005,7 +1005,7 @@ models:
         description: "Trip end longitude"
       
       - name: member_casual
-        description: "User membership classification"
+        description: '{{ doc("member_casual") }}'
         data_tests:
           - not_null:
               config:
@@ -1032,7 +1032,7 @@ models:
                 severity: error
 
       - name: rideable_type
-        description: "Classifier for e-bike or classic"
+        description: '{{ doc("rideable_type") }}'
       
       - name: started_at
         description: "Trip start timestamp"
@@ -1089,7 +1089,7 @@ models:
         description: "Trip end longitude"
       
       - name: member_casual
-        description: "User membership classification"
+        description: '{{ doc("member_casual") }}'
         data_tests:
           - not_null:
               config:
@@ -1116,7 +1116,7 @@ models:
                 severity: error
 
       - name: rideable_type
-        description: "Classifier for e-bike or classic"
+        description: '{{ doc("rideable_type") }}'
       
       - name: started_at
         description: "Trip start timestamp"
@@ -1173,7 +1173,7 @@ models:
         description: "Trip end longitude"
       
       - name: member_casual
-        description: "User membership classification"
+        description: '{{ doc("member_casual") }}'
         data_tests:
           - not_null:
               config:
@@ -1200,7 +1200,7 @@ models:
                 severity: error
 
       - name: rideable_type
-        description: "Classifier for e-bike or classic"
+        description: '{{ doc("rideable_type") }}'
       
       - name: started_at
         description: "Trip start timestamp"
@@ -1257,7 +1257,7 @@ models:
         description: "Trip end longitude"
       
       - name: member_casual
-        description: "User membership classification"
+        description: '{{ doc("member_casual") }}'
         data_tests:
           - not_null:
               config:
@@ -1284,7 +1284,7 @@ models:
                 severity: error
 
       - name: rideable_type
-        description: "Classifier for e-bike or classic"
+        description: '{{ doc("rideable_type") }}'
       
       - name: started_at
         description: "Trip start timestamp"
@@ -1341,7 +1341,7 @@ models:
         description: "Trip end longitude"
       
       - name: member_casual
-        description: "User membership classification"
+        description: '{{ doc("member_casual") }}'
         data_tests:
           - not_null:
               config:
@@ -1368,7 +1368,7 @@ models:
                 severity: error
 
       - name: rideable_type
-        description: "Classifier for e-bike or classic"
+        description: '{{ doc("rideable_type") }}'
       
       - name: started_at
         description: "Trip start timestamp"
@@ -1425,7 +1425,7 @@ models:
         description: "Trip end longitude"
       
       - name: member_casual
-        description: "User membership classification"
+        description: '{{ doc("member_casual") }}'
         data_tests:
           - not_null:
               config:
