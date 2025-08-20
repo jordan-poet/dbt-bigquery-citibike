@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: int_citibike_all_clean
+  - name: int_citibike__joined_errors_extracted
     description: "This model dynamically combines Citibike bronze staging tables into a single table. EXCLUDES ERRORS."
     data_tests:
       # Test that error rate is under 1%
@@ -46,7 +46,7 @@ models:
               config:
                 severity: error
 
-  - name: int_citibike_all_errors
+  - name: int_citibike__joined_errors_only
     description: "This model dynamically combines Citibike bronze staging tables into a single table. INCLUDES ONLY ERRORS."
     columns:
         - name: error_reason
