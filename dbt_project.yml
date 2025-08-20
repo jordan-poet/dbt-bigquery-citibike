@@ -38,6 +38,11 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   bigquery_citibike:  # Replace with your actual project name
     staging:
+      +tags: ['bronze', 'staging']
       bigquery:
         citibike-nyc:
           +materialized: table  # or view
+    intermediate: 
+      +tags: ['silver', 'intermediate']
+    marts:
+      +tags: ['gold', 'marts']
