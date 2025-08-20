@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: citibike_nyc_2024
-    description: "Raw 2024 Citibike NYC data from BigQuery"
+    description: (Bronze) Raw 2024 Citibike NYC data from BigQuery.
     database: lunar-works-464115-g0
     schema: citibike_2024
     tables:
@@ -18,8 +18,9 @@ sources:
       - name: 202410-citibike-tripdata
       - name: 202411-citibike-tripdata
       - name: 202412-citibike-tripdata
+
   - name: citibike_nyc_2025
-    description: "Raw 2025 Citibike NYC data from BigQuery"
+    description: (Bronze) Raw 2025 Citibike NYC data from BigQuery.
     database: lunar-works-464115-g0
     schema: citibike_2025
     tables:
