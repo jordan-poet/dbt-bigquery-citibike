@@ -6,23 +6,23 @@ This model EXCLUDES errors.
 {{ config(materialized='table') }}
 
 -- define table depenedencies
-depends_on: {{ ref('stg_citibike_202401') }}
-depends_on: {{ ref('stg_citibike_202402') }}
-depends_on: {{ ref('stg_citibike_202403') }}
-depends_on: {{ ref('stg_citibike_202404') }}
-depends_on: {{ ref('stg_citibike_202405') }}
-depends_on: {{ ref('stg_citibike_202406') }}
-depends_on: {{ ref('stg_citibike_202407') }}
-depends_on: {{ ref('stg_citibike_202408') }}
-depends_on: {{ ref('stg_citibike_202409') }}
-depends_on: {{ ref('stg_citibike_202410') }}
-depends_on: {{ ref('stg_citibike_202411') }}
-depends_on: {{ ref('stg_citibike_202412') }}
-depends_on: {{ ref('stg_citibike_202501') }}
-depends_on: {{ ref('stg_citibike_202502') }}
-depends_on: {{ ref('stg_citibike_202503') }}
-depends_on: {{ ref('stg_citibike_202504') }}
-depends_on: {{ ref('stg_citibike_202505') }}
+--depends_on: {{ ref('stg_citibike_202401') }}
+--depends_on: {{ ref('stg_citibike_202402') }}
+--depends_on: {{ ref('stg_citibike_202403') }}
+--depends_on: {{ ref('stg_citibike_202404') }}
+--depends_on: {{ ref('stg_citibike_202405') }}
+--depends_on: {{ ref('stg_citibike_202406') }}
+--depends_on: {{ ref('stg_citibike_202407') }}
+--depends_on: {{ ref('stg_citibike_202408') }}
+--depends_on: {{ ref('stg_citibike_202409') }}
+--depends_on: {{ ref('stg_citibike_202410') }}
+--depends_on: {{ ref('stg_citibike_202411') }}
+--depends_on: {{ ref('stg_citibike_202412') }}
+--depends_on: {{ ref('stg_citibike_202501') }}
+--depends_on: {{ ref('stg_citibike_202502') }}
+--depends_on: {{ ref('stg_citibike_202503') }}
+--depends_on: {{ ref('stg_citibike_202504') }}
+--depends_on: {{ ref('stg_citibike_202505') }}
 
 -- dynamic table discovery  
 {%- call statement('get_models', fetch_result=true) -%}
